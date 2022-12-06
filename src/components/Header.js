@@ -20,7 +20,8 @@ const HeaderDiv = styled.div`
     &:hover {
       transform: scale(1.2);
       transition: 0.2s;
-      filter: invert(1);
+      filter: invert(49%) sepia(79%) saturate(1630%) hue-rotate(326deg) brightness(99%)
+        contrast(101%);
     }
   }
 
@@ -36,24 +37,22 @@ const HeaderDiv = styled.div`
   div:first-child {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
 
     h1 {
       font-size: 4.5em;
-      //color: #203f59;
     }
     p {
-      font-size: 1.7rem;
-      //color: #203f59;
+      font-size: 1.1em;
       line-height: 1.4;
     }
     button {
       color: #fff;
       border: none;
-      padding: 1rem 2rem;
+      padding: 1.5rem 2rem;
       border-radius: 5px;
       font-size: 1.6rem;
-      width: 150px;
+      width: 160px;
       cursor: pointer;
       &:hover {
         background-color: #fe5f55;
@@ -77,7 +76,7 @@ const Header = () => {
           working on his first game.
         </p>
         <div className="images">
-          <img src={html} style={{ width: "26px" }} alt="html" />
+          <img className="icon" src={html} style={{ width: "26px" }} alt="html" />
           <img src={css} alt="css" style={{ width: "26px" }} />
           <img src={javascript} alt="javascript" />
           <img src={react} alt="react" />

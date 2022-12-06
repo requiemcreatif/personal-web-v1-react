@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Div = styled.div`
+/*const Div = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
@@ -46,14 +46,32 @@ const Div = styled.div`
     }
 
     &:hover {
-      background-color: #2998d5;
-      color: #fff;
+      //background-color: #2998d5;
+      //color: #fff;
       transition: 0.5s;
       scale: 1.1;
     }
 
     img {
       width: 30px;
+    }
+  }
+`;*/
+
+const Div = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 0 4rem;
+  margin: 4rem auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+
+    .card {
+      width: 80%;
     }
   }
 `;
@@ -63,28 +81,64 @@ const Cards = () => {
     <Wrapper>
       <div></div>
       <Div>
-        <div>
+        <div class="card">
+          <div class="card-details">
+            <p class="text-title">Front End</p>
+            <p class="text-body">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper orci.
+            </p>
+          </div>
+          <button class="card-button">More info</button>
+        </div>
+        <div class="card">
+          <div class="card-details">
+            <p class="text-title">Back End</p>
+            <p class="text-body">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper orci.
+            </p>
+          </div>
+          <button class="card-button">More info</button>
+        </div>
+        <div class="card">
+          <div class="card-details">
+            <p class="text-title">Full Stack Development</p>
+            <p class="text-body">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper orci.
+            </p>
+          </div>
+          <button class="card-button">More info</button>
+        </div>
+        <div class="card">
+          <div class="card-details">
+            <p class="text-title">Graphic Design</p>
+            <p class="text-body">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper orci.
+            </p>
+          </div>
+          <button class="card-button">More info</button>
+        </div>
+        {/* <div className="cards card">
           <img src={react} alt="" />
           <h3>Front End</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper orci.</p>
         </div>
 
-        <div>
+        <div className="cards card">
           <img src={backend} alt="" />
           <h3>Back End</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper orci.</p>
         </div>
 
-        <div>
+        <div className="cards card">
           <img src={nodejs} alt="" />
           <h3>Full Stack Development</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper orci.</p>
         </div>
-        <div>
+        <div className="cards card">
           <img src={sketch} alt="" />
           <h3>Graphic Design</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper orci.</p>
-        </div>
+        </div> */}
       </Div>
     </Wrapper>
   );
