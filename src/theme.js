@@ -8,7 +8,9 @@ export const GlobalStyles = createGlobalStyle`
     transition: background 0.2s ease-in, color 0.2s ease-in;
   }
   // change logo color
-  
+  .font {
+    color: ${({ theme }) => theme.textFont};
+  }
 
     ${NavContainer} {
         
@@ -29,6 +31,7 @@ export const darkTheme = {
   //text: "#f1f1f1",
   text: "#fff",
   btnBackground: "#2998D5",
+  textFont: "#203f59",
   //nav: "#203f59",
   //Logo: "#fff",
 };

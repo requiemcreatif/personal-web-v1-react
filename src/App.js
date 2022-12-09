@@ -7,6 +7,8 @@ import Navbar from "./components/Navbar";
 import Cards from "./components/Cards";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Contact from "./components/Contact";
+import Contactform from "./components/Contactform";
 import styled from "styled-components";
 
 //https://dev.to/requiemcreatif
@@ -27,6 +29,9 @@ function App() {
           <Navbar toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
           <Header />
           <Cards />
+          <Contactform />
+          {/* <Contact /> */}
+
           <Footer />
           <Routes>
             {/* <Route path="/" element={<App />} /> */}

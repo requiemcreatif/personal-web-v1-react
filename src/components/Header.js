@@ -14,6 +14,14 @@ const HeaderDiv = styled.div`
   margin: 6rem auto;
   padding: 15rem 4rem;
 
+  h1 {
+    font-size: 4.5em;
+
+    @media (max-width: 768px) {
+      font-size: 4em;
+    }
+  }
+
   img {
     width: 30px;
 
@@ -39,9 +47,6 @@ const HeaderDiv = styled.div`
     flex-direction: column;
     gap: 4rem;
 
-    h1 {
-      font-size: 4.5em;
-    }
     p {
       font-size: 1.1em;
       line-height: 1.4;
@@ -68,11 +73,11 @@ const Header = () => {
   return (
     <HeaderDiv>
       <div>
-        <h1>Full Stack Development</h1>
+        <h1 className="first">Full Stack Development</h1>
 
         <p>
-          Alain Mani is a French Full Stack Web Developer, with graphic design background. He is
-          based in Malta. He has a passion for coding and design. He is also a indie game developer
+          Alain Mani is a French Full Stack Web Developer based in Malta, with graphic design
+          background. He has a passion for coding and design. He is also a indie game developer
           working on his first game.
         </p>
         <div className="images">

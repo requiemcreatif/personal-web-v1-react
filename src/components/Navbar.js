@@ -50,7 +50,7 @@ export const NavContainer = styled.nav`
       }
 
       li {
-        margin-left: 2rem;
+        margin: 0 2rem;
 
         a {
           text-decoration: none;
@@ -58,7 +58,10 @@ export const NavContainer = styled.nav`
           padding: 1rem;
         }
         &:hover {
-          color: #fff;
+          color: #fe5f55;
+          transition: 0.3s ease-in-out;
+          scale: 1.1;
+          cursor: pointer;
         }
       }
     }
