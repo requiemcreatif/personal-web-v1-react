@@ -51,7 +51,8 @@ h2 {
   --toggle-shadow-offset: 10px;
   --toggle-wider: 3em;
   --color-grey: #cccccc;
-  --color-green: #053651;
+  /* --color-green: #fe5f55; */
+  --color-green: #fff;
 }
 
 .slider {
@@ -69,7 +70,7 @@ h2 {
   display: inline-block;
   width: var(--toggle-diameter);
   height: var(--toggle-diameter);
-  background-color: #fff;
+  background-color: #053651;
   border-radius: calc(var(--toggle-diameter) / 2);
   position: absolute;
   top: var(--button-toggle-offset);
@@ -194,12 +195,14 @@ h2 {
 input:valid {
   outline: none;
   border: 1.5px solid #1a73e8;
+  border: solid 0.5px #9e9e9e;
 }
 
 .input:focus ~ label,
 input:valid ~ label {
   transform: translateY(-50%) scale(0.8);
-  background-color: #d8d8e4;
+  /* background-color: #d8d8e4; */
+  background-color: #fff;
   /* padding: 0 0.2em; */
   color: #2998d5;
 }

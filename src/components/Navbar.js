@@ -1,11 +1,16 @@
 import React from "react";
-import Logo from "../img/Logo.svg";
+import whiteLogo from "../img/whiteLogo.svg";
 
 import menuIcon from "../img/menuIcon.svg";
 import styled from "styled-components";
 
 export const NavContainer = styled.nav`
-  background-color: #ffffff;
+  //background-color: #053651;
+  background: linear-gradient(#053651, #101b21);
+  color: #203f59;
+  //background: linear-gradient(#203f59, #1e3746)
+  //background: linear-gradient(#053651, #053651);
+  color: #203f59;
   height: 80px;
   position: fixed;
   top: 0;
@@ -21,8 +26,11 @@ export const NavContainer = styled.nav`
 
   nav {
     height: 80px;
-    background-color: #ffffff;
-    color: #203f59;
+    //background: linear-gradient(#053651, #101b21);
+    //color: #203f59;
+    //background-color: #ffffff;
+    //background: linear-gradient(#203f59, #1e3746)
+    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,7 +62,7 @@ export const NavContainer = styled.nav`
 
         a {
           text-decoration: none;
-          color: #203f59;
+          color: #fff;
           padding: 1rem;
         }
         &:hover {
@@ -72,20 +80,18 @@ const Navbar = ({ toggleTheme, isDarkTheme }) => {
   return (
     <NavContainer>
       <nav>
-        <img src={Logo} alt="Logo" />
-        {/* <h1>LOGO</h1> */}
+        <img src={whiteLogo} alt="Logo" />
         <ul>
           <li>Home</li>
           <li>Projects</li>
           <li>Blog</li>
           <li>Contact</li>
-          <li></li>
         </ul>
         <img className="mobileMenu" src={menuIcon} alt="open menu" />
 
         <label className="switch">
-          <input type="checkbox" />
-          <span className="slider" onClick={toggleTheme}></span>
+          <input type="checkbox" checked={isDarkTheme} onChange={toggleTheme} />
+          <span className="slider"></span>
         </label>
       </nav>
     </NavContainer>

@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 import { NavContainer } from "./components/Navbar";
-import whiteLogo from "./img/whiteLogo.svg";
 export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
@@ -13,7 +12,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
     ${NavContainer} {
-        
     }
     button {
             background-color: ${({ theme }) => theme.btnBackground};
@@ -22,16 +20,12 @@ export const GlobalStyles = createGlobalStyle`
 `;
 export const lightTheme = {
   body: "#f7f7ff",
-  text: "#203f59",
+  text: "#000",
   btnBackground: "#203f59",
 };
 export const darkTheme = {
-  body: "#101B21",
-  //body: "#000",
-  //text: "#f1f1f1",
+  body: "#000",
   text: "#fff",
   btnBackground: "#2998D5",
   textFont: "#203f59",
-  //nav: "#203f59",
-  //Logo: "#fff",
 };

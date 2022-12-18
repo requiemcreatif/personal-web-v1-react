@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Div = styled.div`
-  background: #d8d8e4;
+  //background: #d8d8e4;
+  background-color: #fff;
   padding: 1rem 0;
 `;
 
@@ -11,7 +12,8 @@ const Wrapper = styled.div`
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background: #d8d8e4;
+  //background: #d8d8e4;
+  background-color: #fff;
   padding: 5rem 0;
   margin: 5rem auto;
   max-width: 1300px;
@@ -135,38 +137,39 @@ const Contactform = () => {
           <form>
             <div className="form-one">
               <div className="input-group">
-                <input required type="text" name="text" autocomplete="off" class="input" />
+                <input required type="text" name="firstName" autoComplete="off" className="input" />
                 <label className="user-label">First Name *</label>
               </div>
               <div className="input-group">
-                <input required type="text" name="text" autocomplete="off" className="input" />
+                <input required type="text" name="lastName" autoComplete="off" className="input" />
                 <label className="user-label">Last Name *</label>
               </div>
             </div>
             <div className="form-two">
               <div className="input-group">
-                <input required type="email" name="email" autocomplete="off" className="input" />
+                <input required type="email" name="email" autoComplete="off" className="input" />
                 <label className="user-label">Email *</label>
               </div>
               <div className="input-group">
-                <textarea
-                  required
-                  cols="30"
-                  rows="10"
-                  autocomplete="off"
-                  className="input"></textarea>
-                {/* <label class="user-label">Email</label> */}
+                <input required type="text" name="subject" autoComplete="off" className="input" />
+                <label className="user-label">Subject *</label>
               </div>
+              <div className="input-group">
+                <textarea required name="message" rows="8" className="input"></textarea>
+                <label className="user-label">Message *</label>
+              </div>
+              <button type="submit">Send</button>
             </div>
-            <button>Submit</button>
           </form>
         </FormDiv>
         <InfoDiv className="two">
-          <h3 className="font">Find me on social media</h3>
-          <p className="font">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error at enim ad officia nobis
-            voluptatum, numquam doloribus deserunt adipisci ducimus nemo eaque odit obcaecati facere
-            nihil ut magni inventore aliquid!
+          <h3>Contact Information</h3>
+          <p>
+            Address: 123 Main St., Anytown, USA
+            <br />
+            Phone: 555-555-5555
+            <br />
+            Email: info@company.com
           </p>
         </InfoDiv>
       </Wrapper>

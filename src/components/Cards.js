@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import styled from "styled-components";
 import backend from "../img/backend.svg";
 import sketch from "../img/sketch.svg";
@@ -7,6 +8,7 @@ import css from "../img/css.svg";
 import react from "../img/react.svg";
 import javascript from "../img/javascript.svg";
 import nodejs from "../img/nodejs.svg";
+import { useState } from "react";
 
 const Wrapper = styled.div`
   max-width: 1200px;
@@ -24,8 +26,12 @@ const Div = styled.div`
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
-  gap: 2rem;
+  //gap: 1rem;
   margin: 2rem auto;
+
+  .card {
+    margin-bottom: 3rem;
+  }
 
   .text-title {
     border-bottom: 1px solid #fe5f55;
@@ -42,56 +48,180 @@ const Div = styled.div`
 `;
 
 const LeftDiv = styled.div`
-  width: 600px;
-  height: 100%;
-  background: transparent;
-  border-radius: 10px;
+  //padding: 0 45rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (max-width: 768px) {
-    display: none;
+    //padding: 0 2rem;
+  }
+
+  .text-animation {
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  .text-animation.visible {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+
+  .fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    //transform: scale(0.9);
+  }
+
+  div {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 `;
 
 const Cards = () => {
+  const [activeCard, setActiveCard] = useState(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (visible) {
+      const timeoutId = setTimeout(() => {
+        setVisible(false);
+      }, 3000);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [visible]);
+
   return (
     <Wrapper>
-      <LeftDiv></LeftDiv>
+      <LeftDiv>
+        {activeCard && activeCard === "front-end" ? (
+          <div className={`text-animation ${visible ? "visible" : ""}`}>
+            <h3>Front End project</h3>
+            <p>
+              User interfaces and visual designs of websites or web applications, using React,
+              JavaScript, HTML, and CSS.
+            </p>
+          </div>
+        ) : activeCard === "back-end" ? (
+          <div className={`text-animation ${visible ? "visible" : ""}`}>
+            <h3>Back End project</h3>
+            <p>
+              Node.js and Express to create server-side scripts and integrate with databases using
+              MongoDB or Firebase.
+            </p>
+          </div>
+        ) : activeCard === "full-stack" ? (
+          <div className={`text-animation ${visible ? "visible" : ""}`}>
+            <h3>Full Stack project</h3>
+            <p>
+              User interface and server-side development, using React, Node.js, Express, MongoDB,
+              and Firebase.
+            </p>
+          </div>
+        ) : activeCard === "graphic-design" ? (
+          <div className={`text-animation ${visible ? "visible" : ""}`}>
+            <h3>Graphic design project</h3>
+            <p>
+              Creation of visual appealing designs for websites, web applications, and mobile
+              applications.
+            </p>
+          </div>
+        ) : null}
+      </LeftDiv>
+      {/* <Div>
+        {["Front End", "Back End", "Full Stack Development", "Graphic Design"].map((title) => (
+          <div className="card" key={title}>
+            <div className="card-details">
+              <p className="text-title">{title}</p>
+              <p className="text-body">
+                {title} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper
+                orci.
+              </p>
+            </div>
+            <button
+              className="card-button"
+              onClick={() => setActiveCard(title.toLowerCase().replace(/ /g, "-"))}>
+              More info
+            </button>
+          </div>
+        ))}
+      </Div> */}
+
       <Div>
-        <div class="card">
-          <div class="card-details">
-            <p class="text-title">Front End</p>
-            <p class="text-body">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper orci.
+        <div className="card">
+          <div className="card-details">
+            <p className="text-title">Front End</p>
+            <p className="text-body">
+              User interfaces and visual designs of websites or web applications, using React,
+              JavaScript, HTML, and CSS.
             </p>
           </div>
-          <button class="card-button">More info</button>
+          <button
+            className="card-button"
+            onClick={() => {
+              setActiveCard("front-end");
+              setVisible(true);
+            }}>
+            More info
+          </button>
         </div>
-        <div class="card">
-          <div class="card-details">
-            <p class="text-title">Back End</p>
-            <p class="text-body">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper orci.
+        <div className="card">
+          <div className="card-details">
+            <p className="text-title">Back End</p>
+            <p className="text-body">
+              Node.js and Express to create server-side scripts and integrate with databases using
+              MongoDB or Firebase.
             </p>
           </div>
-          <button class="card-button">More info</button>
+          <button
+            className="card-button"
+            onClick={() => {
+              setActiveCard("back-end");
+              setVisible(true);
+            }}>
+            More info
+          </button>
         </div>
-        <div class="card">
-          <div class="card-details">
-            <p class="text-title">Full Stack Development</p>
-            <p class="text-body">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper orci.
+        <div className="card">
+          <div className="card-details">
+            <p className="text-title">Full Stack Development</p>
+            <p className="text-body">
+              User interface and server-side development, using React, Node.js, Express, MongoDB,
+              and Firebase.
             </p>
           </div>
-          <button class="card-button">More info</button>
+          <button
+            className="card-button"
+            onClick={() => {
+              setActiveCard("full-stack");
+              setVisible(true);
+            }}>
+            More info
+          </button>
         </div>
-        <div class="card">
-          <div class="card-details">
-            <p class="text-title">Graphic Design</p>
-            <p class="text-body">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper orci.
+        <div className="card">
+          <div className="card-details">
+            <p className="text-title">Graphic Design</p>
+            <p className="text-body">
+              Creation of visual appealing designs for websites, web applications, and mobile
+              applications.
             </p>
           </div>
-          <button class="card-button">More info</button>
+          <button
+            className="card-button"
+            onClick={() => {
+              setActiveCard("graphic-design");
+              setVisible(true);
+            }}>
+            More info
+          </button>
         </div>
       </Div>
     </Wrapper>

@@ -15,8 +15,9 @@ const HeaderDiv = styled.div`
   padding: 15rem 4rem;
 
   h1 {
-    font-size: 4.5em;
-
+    font-size: 5.5em;
+    //color: #fe5f55;
+    //color: #000; // black
     @media (max-width: 768px) {
       font-size: 4em;
     }
@@ -48,21 +49,23 @@ const HeaderDiv = styled.div`
     gap: 4rem;
 
     p {
-      font-size: 1.1em;
+      font-size: 1.2em;
       line-height: 1.4;
+      font-weight: 300;
+      //color: #000;
     }
     button {
       color: #fff;
       border: none;
       padding: 1.5rem 2rem;
-      border-radius: 5px;
+      border-radius: 3px;
       font-size: 1.6rem;
-      width: 160px;
+      width: 200px;
       cursor: pointer;
       &:hover {
         background-color: #fe5f55;
         color: #203f59;
-        scale: 1.1;
+        transform: scale(1.1);
         transition: 0.5s;
       }
     }
@@ -76,16 +79,20 @@ const Header = () => {
         <h1 className="first">Full Stack Development</h1>
 
         <p>
-          Alain Mani is a French Full Stack Web Developer based in Malta, with graphic design
-          background. He has a passion for coding and design. He is also a indie game developer
-          working on his first game.
+          Alain Mani is a multitalented French developer with expertise in full stack web
+          development and a background in graphic design. Based in Malta, he is passionate about
+          coding and design, and has a particular interest in game development. Currently, Alain is
+          working on his first indie game, which showcases his creativity and technical skills. In
+          addition to his web development and game development pursuits, Alain has a strong eye for
+          aesthetics and is skilled in creating visually appealing and user-friendly web
+          applications.
         </p>
         <div className="images">
-          <img className="icon" src={html} style={{ width: "26px" }} alt="html" />
-          <img src={css} alt="css" style={{ width: "26px" }} />
+          {/* <img src={html} alt="html" />
+          <img src={css} alt="css" />
           <img src={javascript} alt="javascript" />
           <img src={react} alt="react" />
-          <img src={nodejs} alt="node.js" />
+          <img src={nodejs} alt="node.js" /> */}
         </div>
 
         <button>Get in touch</button>
