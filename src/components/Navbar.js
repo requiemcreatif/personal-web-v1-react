@@ -1,12 +1,14 @@
 import React from "react";
 import whiteLogo from "../img/whiteLogo.svg";
-
+import Logo from "../img/Logo.svg";
 import menuIcon from "../img/menuIcon.svg";
 import styled from "styled-components";
+import { lightTheme } from "../theme";
 
 export const NavContainer = styled.nav`
   //background-color: #053651;
-  background: linear-gradient(#053651, #101b21);
+  background-color: #3c86a3;
+  //background: linear-gradient(#053651, #101b21);
   color: #203f59;
   //background: linear-gradient(#203f59, #1e3746)
   //background: linear-gradient(#053651, #053651);
@@ -26,10 +28,6 @@ export const NavContainer = styled.nav`
 
   nav {
     height: 80px;
-    //background: linear-gradient(#053651, #101b21);
-    //color: #203f59;
-    //background-color: #ffffff;
-    //background: linear-gradient(#203f59, #1e3746)
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -59,14 +57,15 @@ export const NavContainer = styled.nav`
 
       li {
         margin: 0 2rem;
+        //color: #024959;
 
         a {
           text-decoration: none;
-          color: #fff;
+          //color: #000;
           padding: 1rem;
         }
         &:hover {
-          color: #fe5f55;
+          color: #fff;
           transition: 0.3s ease-in-out;
           scale: 1.1;
           cursor: pointer;
@@ -76,13 +75,14 @@ export const NavContainer = styled.nav`
   }
 `;
 
-const Navbar = ({ toggleTheme, isDarkTheme }) => {
+const Navbar = ({ toggleTheme, isDarkTheme, lightTheme }) => {
   return (
-    <NavContainer>
+    <NavContainer className="nav-div">
       <nav>
-        <img src={whiteLogo} alt="Logo" />
-        <ul>
-          <li>Home</li>
+        {/* <img src={Logo} alt="Logo" /> */}
+        {!isDarkTheme ? <img src={Logo} alt="Logo" /> : <img src={whiteLogo} alt="Logo" />}
+        <ul className="menu-links">
+          <li className="menu-links">Home</li>
           <li>Projects</li>
           <li>Blog</li>
           <li>Contact</li>

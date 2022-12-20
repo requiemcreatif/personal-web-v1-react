@@ -1,19 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const Div = styled.div`
+const DivContact = styled.div`
   //background: #d8d8e4;
-  background-color: #fff;
+  //background-color: #8fbdd9;
+  //background-color: #fff;
   padding: 1rem 0;
 `;
 
 const Wrapper = styled.div`
   font-family: "blinker", sans-serif;
-
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  //background: #d8d8e4;
-  background-color: #fff;
+
   padding: 5rem 0;
   margin: 5rem auto;
   max-width: 1300px;
@@ -29,6 +28,7 @@ const Wrapper = styled.div`
     }
     .two {
       grid-area: one;
+      padding: 2rem;
     }
   }
 `;
@@ -48,7 +48,11 @@ const FormDiv = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      gap: 2rem;
+    }
     //align-items: center;
 
     textarea {
@@ -81,7 +85,7 @@ const FormDiv = styled.div`
 
       @media (max-width: 768px) {
         grid-template-columns: 1fr;
-        gap: 0;
+        gap: 2rem;
       }
     }
   }
@@ -97,7 +101,7 @@ const FormDiv = styled.div`
     padding: 1.5rem;
     border: none;
     border-radius: 5px;
-    background-color: #203f59;
+    //background-color: #f2b705;
     //border: 0.5px solid #c3c6ce;
     color: #fff;
     font-size: 1.5rem;
@@ -106,7 +110,7 @@ const FormDiv = styled.div`
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     &:hover {
-      background-color: #fe5f55; // 203f59
+      background-color: #c7b59c; // 203f59
       color: #fff;
       //scale: 1.1;
     }
@@ -131,7 +135,7 @@ const InfoDiv = styled.div`
 
 const Contactform = () => {
   return (
-    <Div>
+    <DivContact className="div-contact">
       <Wrapper>
         <FormDiv className="one">
           <form>
@@ -158,22 +162,24 @@ const Contactform = () => {
                 <textarea required name="message" rows="8" className="input"></textarea>
                 <label className="user-label">Message *</label>
               </div>
-              <button type="submit">Send</button>
+              <button type="submit" className="about-me-btn">
+                Send
+              </button>
             </div>
           </form>
         </FormDiv>
         <InfoDiv className="two">
-          <h3>Contact Information</h3>
+          {/* <h3>Contact Information</h3>
           <p>
             Address: 123 Main St., Anytown, USA
             <br />
             Phone: 555-555-5555
             <br />
             Email: info@company.com
-          </p>
+          </p> */}
         </InfoDiv>
       </Wrapper>
-    </Div>
+    </DivContact>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "../components/Navigation";
+// import Navigation from "../components/Navigation";
 
 import Header from "../components/Header";
 import Cards from "../components/Cards";
@@ -17,8 +17,8 @@ const Home = ({ toggleShowLinks, isDarkTheme, toggleTheme, showLinks, renderActi
         toggleShowLinks={toggleShowLinks}
         showLinks={showLinks}
       /> */}
-      <Header />
-      <Cards />
+      <Header toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+      <Cards toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
       <Contactform />
       <Footer />
     </div>

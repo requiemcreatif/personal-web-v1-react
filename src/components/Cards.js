@@ -1,18 +1,23 @@
 import React from "react";
 import { useEffect } from "react";
 import styled from "styled-components";
-import backend from "../img/backend.svg";
-import sketch from "../img/sketch.svg";
-import html from "../img/html.svg";
-import css from "../img/css.svg";
-import react from "../img/react.svg";
-import javascript from "../img/javascript.svg";
-import nodejs from "../img/nodejs.svg";
+// import { GlobalStyles, lightTheme, darkTheme } from "../theme";
+// import backend from "../img/backend.svg";
+// import sketch from "../img/sketch.svg";
+// import html from "../img/html.svg";
+// import css from "../img/css.svg";
+// import react from "../img/react.svg";
+// import javascript from "../img/javascript.svg";
+// import nodejs from "../img/nodejs.svg";
 import { useState } from "react";
 
+export const CardDivWrapper = styled.div`
+  padding: 5rem 0;
+  //background-color: #fff;
+`;
 const Wrapper = styled.div`
-  max-width: 1200px;
-  margin: 0 auto 10rem auto;
+  max-width: 1400px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
@@ -34,7 +39,8 @@ const Div = styled.div`
   }
 
   .text-title {
-    border-bottom: 1px solid #fe5f55;
+    //border-bottom: 1px solid #fe5f55;
+    border-bottom: 1px solid #c7b59c;
     padding-bottom: 1rem;
   }
 
@@ -99,43 +105,44 @@ const Cards = () => {
   }, [visible]);
 
   return (
-    <Wrapper>
-      <LeftDiv>
-        {activeCard && activeCard === "front-end" ? (
-          <div className={`text-animation ${visible ? "visible" : ""}`}>
-            <h3>Front End project</h3>
-            <p>
-              User interfaces and visual designs of websites or web applications, using React,
-              JavaScript, HTML, and CSS.
-            </p>
-          </div>
-        ) : activeCard === "back-end" ? (
-          <div className={`text-animation ${visible ? "visible" : ""}`}>
-            <h3>Back End project</h3>
-            <p>
-              Node.js and Express to create server-side scripts and integrate with databases using
-              MongoDB or Firebase.
-            </p>
-          </div>
-        ) : activeCard === "full-stack" ? (
-          <div className={`text-animation ${visible ? "visible" : ""}`}>
-            <h3>Full Stack project</h3>
-            <p>
-              User interface and server-side development, using React, Node.js, Express, MongoDB,
-              and Firebase.
-            </p>
-          </div>
-        ) : activeCard === "graphic-design" ? (
-          <div className={`text-animation ${visible ? "visible" : ""}`}>
-            <h3>Graphic design project</h3>
-            <p>
-              Creation of visual appealing designs for websites, web applications, and mobile
-              applications.
-            </p>
-          </div>
-        ) : null}
-      </LeftDiv>
-      {/* <Div>
+    <CardDivWrapper className="card-div-wrapper">
+      <Wrapper>
+        <LeftDiv>
+          {activeCard && activeCard === "front-end" ? (
+            <div className={`text-animation ${visible ? "visible" : ""}`}>
+              <h3>Front End project</h3>
+              <p>
+                User interfaces and visual designs of websites or web applications, using React,
+                JavaScript, HTML, and CSS.
+              </p>
+            </div>
+          ) : activeCard === "back-end" ? (
+            <div className={`text-animation ${visible ? "visible" : ""}`}>
+              <h3>Back End project</h3>
+              <p>
+                Node.js and Express to create server-side scripts and integrate with databases using
+                MongoDB or Firebase.
+              </p>
+            </div>
+          ) : activeCard === "full-stack" ? (
+            <div className={`text-animation ${visible ? "visible" : ""}`}>
+              <h3>Full Stack project</h3>
+              <p>
+                User interface and server-side development, using React, Node.js, Express, MongoDB,
+                and Firebase.
+              </p>
+            </div>
+          ) : activeCard === "graphic-design" ? (
+            <div className={`text-animation ${visible ? "visible" : ""}`}>
+              <h3>Graphic design project</h3>
+              <p>
+                Creation of visual appealing designs for websites, web applications, and mobile
+                applications.
+              </p>
+            </div>
+          ) : null}
+        </LeftDiv>
+        {/* <Div>
         {["Front End", "Back End", "Full Stack Development", "Graphic Design"].map((title) => (
           <div className="card" key={title}>
             <div className="card-details">
@@ -154,77 +161,78 @@ const Cards = () => {
         ))}
       </Div> */}
 
-      <Div>
-        <div className="card">
-          <div className="card-details">
-            <p className="text-title">Front End</p>
-            <p className="text-body">
-              User interfaces and visual designs of websites or web applications, using React,
-              JavaScript, HTML, and CSS.
-            </p>
+        <Div>
+          <div className="card">
+            <div className="card-details">
+              <p className="text-title">Front End</p>
+              <p className="text-body">
+                User interfaces and visual designs of websites or web applications, using React,
+                JavaScript, HTML, and CSS.
+              </p>
+            </div>
+            <button
+              className="card-button"
+              onClick={() => {
+                setActiveCard("front-end");
+                setVisible(true);
+              }}>
+              More info
+            </button>
           </div>
-          <button
-            className="card-button"
-            onClick={() => {
-              setActiveCard("front-end");
-              setVisible(true);
-            }}>
-            More info
-          </button>
-        </div>
-        <div className="card">
-          <div className="card-details">
-            <p className="text-title">Back End</p>
-            <p className="text-body">
-              Node.js and Express to create server-side scripts and integrate with databases using
-              MongoDB or Firebase.
-            </p>
+          <div className="card">
+            <div className="card-details">
+              <p className="text-title">Back End</p>
+              <p className="text-body">
+                Node.js and Express to create server-side scripts and integrate with databases using
+                MongoDB or Firebase.
+              </p>
+            </div>
+            <button
+              className="card-button"
+              onClick={() => {
+                setActiveCard("back-end");
+                setVisible(true);
+              }}>
+              More info
+            </button>
           </div>
-          <button
-            className="card-button"
-            onClick={() => {
-              setActiveCard("back-end");
-              setVisible(true);
-            }}>
-            More info
-          </button>
-        </div>
-        <div className="card">
-          <div className="card-details">
-            <p className="text-title">Full Stack Development</p>
-            <p className="text-body">
-              User interface and server-side development, using React, Node.js, Express, MongoDB,
-              and Firebase.
-            </p>
+          <div className="card">
+            <div className="card-details">
+              <p className="text-title">Full Stack Development</p>
+              <p className="text-body">
+                User interface and server-side development, using React, Node.js, Express, MongoDB,
+                and Firebase.
+              </p>
+            </div>
+            <button
+              className="card-button"
+              onClick={() => {
+                setActiveCard("full-stack");
+                setVisible(true);
+              }}>
+              More info
+            </button>
           </div>
-          <button
-            className="card-button"
-            onClick={() => {
-              setActiveCard("full-stack");
-              setVisible(true);
-            }}>
-            More info
-          </button>
-        </div>
-        <div className="card">
-          <div className="card-details">
-            <p className="text-title">Graphic Design</p>
-            <p className="text-body">
-              Creation of visual appealing designs for websites, web applications, and mobile
-              applications.
-            </p>
+          <div className="card">
+            <div className="card-details">
+              <p className="text-title">Graphic Design</p>
+              <p className="text-body">
+                Creation of visual appealing designs for websites, web applications, and mobile
+                applications.
+              </p>
+            </div>
+            <button
+              className="card-button"
+              onClick={() => {
+                setActiveCard("graphic-design");
+                setVisible(true);
+              }}>
+              More info
+            </button>
           </div>
-          <button
-            className="card-button"
-            onClick={() => {
-              setActiveCard("graphic-design");
-              setVisible(true);
-            }}>
-            More info
-          </button>
-        </div>
-      </Div>
-    </Wrapper>
+        </Div>
+      </Wrapper>
+    </CardDivWrapper>
   );
 };
 
