@@ -4,6 +4,7 @@ import Logo from "../img/Logo.svg";
 import menuIcon from "../img/menuIcon.svg";
 import styled from "styled-components";
 import { lightTheme } from "../theme";
+import { BiMenu } from "react-icons/bi";
 
 export const NavContainer = styled.nav`
   //background-color: #053651;
@@ -36,6 +37,11 @@ export const NavContainer = styled.nav`
     margin: 0 auto;
     padding: 2rem 4rem;
 
+    .bimenu {
+      color: #193147;
+      font-size: 4rem;
+    }
+
     .mobileMenu {
       display: none;
     }
@@ -48,7 +54,7 @@ export const NavContainer = styled.nav`
     }
 
     ul {
-      display: flex;
+      display: none;
       list-style: none;
 
       @media (max-width: 768px) {
@@ -87,8 +93,8 @@ const Navbar = ({ toggleTheme, isDarkTheme, lightTheme }) => {
           <li>Blog</li>
           <li>Contact</li>
         </ul>
-        <img className="mobileMenu" src={menuIcon} alt="open menu" />
-
+        {/* <img className="mobileMenu" src={menuIcon} alt="open menu" /> */}
+        <BiMenu className="bimenu" />
         <label className="switch">
           <input type="checkbox" checked={isDarkTheme} onChange={toggleTheme} />
           <span className="slider"></span>

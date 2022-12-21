@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 // import Navigation from "../components/Navigation";
 
 import Header from "../components/Header";
@@ -18,6 +19,7 @@ const Home = ({ toggleShowLinks, isDarkTheme, toggleTheme, showLinks, renderActi
         showLinks={showLinks}
       /> */}
       <Header toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+
       <Cards toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
       <Contactform />
       <Footer />

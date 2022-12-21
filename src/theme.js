@@ -50,6 +50,10 @@ export const GlobalStyles = createGlobalStyle`
         .about-me-btn {
           background-color: ${({ theme }) => theme.aboutMeBtn};
         }
+
+        .modal-text {
+          color: ${({ theme }) => theme.modalText};
+        }
   }
   
 
@@ -57,6 +61,7 @@ export const GlobalStyles = createGlobalStyle`
     
 `;
 export const lightTheme = {
+  text: "#193147",
   heroText: "#193147",
   headingFont: "#193147",
   headerDiv: "#cab59a",
@@ -79,7 +84,8 @@ export const darkTheme = {
   getInTouch: "#cab59a",
   aboutMeBtn: "#cab59a",
   headerDiv: "#193147",
-  cardBody: "#C7B59C",
+  modalText: "#193147",
+  cardBody: "#193148",
   divContact: "#193147",
   textFontP: "#fff",
   divFooter: "#193147",

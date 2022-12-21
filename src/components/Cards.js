@@ -4,11 +4,11 @@ import styled from "styled-components";
 // import { GlobalStyles, lightTheme, darkTheme } from "../theme";
 // import backend from "../img/backend.svg";
 // import sketch from "../img/sketch.svg";
-// import html from "../img/html.svg";
-// import css from "../img/css.svg";
-// import react from "../img/react.svg";
-// import javascript from "../img/javascript.svg";
-// import nodejs from "../img/nodejs.svg";
+import html from "../img/html.svg";
+import css from "../img/css.svg";
+import react from "../img/react.svg";
+import javascript from "../img/javascript.svg";
+import nodejs from "../img/nodejs.svg";
 import { useState } from "react";
 
 export const CardDivWrapper = styled.div`
@@ -80,10 +80,34 @@ const LeftDiv = styled.div`
   }
 
   div {
-    padding: 3rem;
+    padding: 5rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    .image-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    p {
+      font-size: 1.5rem;
+      text-align: center;
+      line-height: 2rem;
+    }
+
+    img {
+      width: 8%;
+    }
 
     @media (max-width: 768px) {
       display: none;
@@ -95,14 +119,16 @@ const Cards = () => {
   const [activeCard, setActiveCard] = useState(null);
   const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    if (visible) {
-      const timeoutId = setTimeout(() => {
-        setVisible(false);
-      }, 3000);
-      return () => clearTimeout(timeoutId);
-    }
-  }, [visible]);
+  //Make the text visible on the left side and remove it after 3 seconds
+
+  // useEffect(() => {
+  //   if (visible) {
+  //     const timeoutId = setTimeout(() => {
+  //       setVisible(false);
+  //     }, 3000);
+  //     return () => clearTimeout(timeoutId);
+  //   }
+  // }, [visible]);
 
   return (
     <CardDivWrapper className="card-div-wrapper">
@@ -115,6 +141,10 @@ const Cards = () => {
                 User interfaces and visual designs of websites or web applications, using React,
                 JavaScript, HTML, and CSS.
               </p>
+
+              <div className="image-box">
+                <img src={react} alt="react" />
+              </div>
             </div>
           ) : activeCard === "back-end" ? (
             <div className={`text-animation ${visible ? "visible" : ""}`}>
@@ -123,6 +153,9 @@ const Cards = () => {
                 Node.js and Express to create server-side scripts and integrate with databases using
                 MongoDB or Firebase.
               </p>
+              <div className="image-box">
+                <img src={react} alt="react" />
+              </div>
             </div>
           ) : activeCard === "full-stack" ? (
             <div className={`text-animation ${visible ? "visible" : ""}`}>
@@ -131,6 +164,9 @@ const Cards = () => {
                 User interface and server-side development, using React, Node.js, Express, MongoDB,
                 and Firebase.
               </p>
+              <div className="image-box">
+                <img src={react} alt="react" />
+              </div>
             </div>
           ) : activeCard === "graphic-design" ? (
             <div className={`text-animation ${visible ? "visible" : ""}`}>
@@ -139,6 +175,9 @@ const Cards = () => {
                 Creation of visual appealing designs for websites, web applications, and mobile
                 applications.
               </p>
+              <div className="image-box">
+                <img src={react} alt="react" />
+              </div>
             </div>
           ) : null}
         </LeftDiv>

@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { useState } from "react";
+import AboutModal from "./AboutModal";
 // import { GlobalStyles, lightTheme, darkTheme } from "../theme";
 // import sketch from "../img/sketch.svg";
 // import html from "../img/html.svg";
@@ -29,7 +31,7 @@ const HeaderDiv = styled.div`
     }
   }
 
-  img {
+  /* img {
     width: 30px;
 
     &:hover {
@@ -38,7 +40,7 @@ const HeaderDiv = styled.div`
       filter: invert(49%) sepia(79%) saturate(1630%) hue-rotate(326deg) brightness(99%)
         contrast(101%);
     }
-  }
+  } */
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -71,6 +73,11 @@ const HeaderDiv = styled.div`
         font-size: 1.6rem;
         width: 200px;
         cursor: pointer;
+
+        @media (max-width: 768px) {
+          width: 300px;
+        }
+
         &:hover {
           background-color: #8fbdd9;
           color: #203f59;
@@ -89,6 +96,9 @@ const HeaderDiv = styled.div`
         font-size: 1.6rem;
         width: 200px;
         cursor: pointer;
+        @media (max-width: 768px) {
+          width: 300px;
+        }
         &:hover {
           background-color: #8fbdd9;
           border: none;
@@ -131,8 +141,13 @@ const HeaderDiv = styled.div`
 `;
 
 const Header = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const removeModal = () => setModalIsOpen(true, console.log("show"));
+  const handleClose = () => setModalIsOpen(false, console.log("closed"));
+
   return (
     <DivHeader className="div-header">
+      {modalIsOpen && <AboutModal onClick={handleClose} />}
       <HeaderDiv className="first">
         <div>
           <h1 className="heading-font">Full Stack Development</h1>
@@ -150,7 +165,9 @@ const Header = () => {
             creating visually appealing and user-friendly web applications.
           </p> */}
           <div>
-            <button className="about-me-btn">More About Me</button>
+            <button className="about-me-btn" onClick={removeModal}>
+              More About Me
+            </button>
             <button className="get-in-touch">Get in touch</button>
           </div>
         </div>
