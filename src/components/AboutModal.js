@@ -9,6 +9,7 @@ const BackdropOver = styled.div`
   height: 100%;
   background-color: #053651;
   transition: all 0.3s ease-in-out;
+
   opacity: 0.5;
   //background-color: rgba(0, 0, 0, 0.5);
   z-index: 10;
@@ -22,6 +23,8 @@ const ModalDiv = styled.div`
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  // add a better transition to the modal
+
   //z-index: 100;
   background-color: #fff;
   max-width: 1200px;
@@ -33,6 +36,19 @@ const ModalDiv = styled.div`
   border-radius: 0.5rem;
   z-index: 100;
   opacity: 0.9;
+
+  animation: 0.6s ease-in-out 0s 1 normal none running fadeIn;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.9;
+    }
+  }
+
+  transition: width 0.3s ease-in-out;
 
   @media (max-width: 768px) {
     padding: 1rem;

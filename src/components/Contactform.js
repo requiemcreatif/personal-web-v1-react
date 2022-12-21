@@ -58,6 +58,7 @@ const FormDiv = styled.div`
     textarea {
       width: 100%;
       padding: 1rem;
+      border: none;
       border: 0.5px solid #ccc;
       border-radius: 5px;
       background-color: #fff;

@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
 import AboutModal from "./AboutModal";
+import Sidemenu from "./Sidebar";
+
 // import { GlobalStyles, lightTheme, darkTheme } from "../theme";
 // import sketch from "../img/sketch.svg";
 // import html from "../img/html.svg";
@@ -44,7 +46,7 @@ const HeaderDiv = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    padding: 5rem 4rem;
+    padding: 10rem 4rem;
   }
   .images {
     display: flex;
@@ -148,6 +150,7 @@ const Header = () => {
   return (
     <DivHeader className="div-header">
       {modalIsOpen && <AboutModal onClick={handleClose} />}
+
       <HeaderDiv className="first">
         <div>
           <h1 className="heading-font">Full Stack Development</h1>
@@ -171,6 +174,8 @@ const Header = () => {
             <button className="get-in-touch">Get in touch</button>
           </div>
         </div>
+
+        {/* <Sidemenu /> */}
       </HeaderDiv>
     </DivHeader>
   );

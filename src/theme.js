@@ -54,6 +54,11 @@ export const GlobalStyles = createGlobalStyle`
         .modal-text {
           color: ${({ theme }) => theme.modalText};
         }
+
+        .bimenu {
+          color: ${({ theme }) => theme.bimenu};
+
+        }
   }
   
 
@@ -62,6 +67,7 @@ export const GlobalStyles = createGlobalStyle`
 `;
 export const lightTheme = {
   text: "#193147",
+  bimenu: "#193147",
   heroText: "#193147",
   headingFont: "#193147",
   headerDiv: "#cab59a",
@@ -71,13 +77,15 @@ export const lightTheme = {
   getInTouch: "#000",
   aboutMeBtn: "#193147",
   //cardBody: "#193147",
-  cardBody: "#F4EEE5",
+
   btnBackground: "#203f59",
-  divContact: "#91B8C7",
+  cardBody: "#F4EEE5",
+  divContact: "#F4EEE5",
   divFooter: "#193147",
 };
 export const darkTheme = {
   text: "#fff",
+  bimenu: "#fff",
   heroText: "#fff",
   navDiv: "#193147",
   menuLinks: "#fff",

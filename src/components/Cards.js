@@ -100,9 +100,9 @@ const LeftDiv = styled.div`
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       text-align: center;
-      line-height: 2rem;
+      line-height: 2.5rem;
     }
 
     img {
@@ -121,14 +121,14 @@ const Cards = () => {
 
   //Make the text visible on the left side and remove it after 3 seconds
 
-  // useEffect(() => {
-  //   if (visible) {
-  //     const timeoutId = setTimeout(() => {
-  //       setVisible(false);
-  //     }, 3000);
-  //     return () => clearTimeout(timeoutId);
-  //   }
-  // }, [visible]);
+  useEffect(() => {
+    if (visible) {
+      const timeoutId = setTimeout(() => {
+        setVisible(false);
+      }, 3000);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [visible]);
 
   return (
     <CardDivWrapper className="card-div-wrapper">
