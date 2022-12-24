@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const DivContact = styled.div`
-  //background: #d8d8e4;
-  //background-color: #8fbdd9;
-  //background-color: #fff;
   padding: 1rem 0;
 `;
 
 const Wrapper = styled.div`
+  //Contact Modal
+
+  //Contact Modal
   font-family: "blinker", sans-serif;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -134,7 +134,7 @@ const InfoDiv = styled.div`
   }
 `;
 
-const Contactform = () => {
+const Contactform = ({ onClick }) => {
   return (
     <DivContact className="div-contact">
       <Wrapper>
@@ -169,6 +169,7 @@ const Contactform = () => {
             </div>
           </form>
         </FormDiv>
+
         <InfoDiv className="two">
           {/* <h3>Contact Information</h3>
           <p>

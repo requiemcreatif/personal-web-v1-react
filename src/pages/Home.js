@@ -34,7 +34,7 @@ const Home = ({ toggleShowLinks, isDarkTheme, toggleTheme, showLinks, renderActi
       {console.log(sidebar)}
       <BackDropMenu sidebar={sidebar} closeSidebar={toggleSidebar} />
       <Cards toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
-      <Contactform />
+      {/* <Contactform /> */}
       <Footer />
     </div>
   );

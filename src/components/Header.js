@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import AboutModal from "./AboutModal";
 import Sidemenu from "./Sidebar";
+import Contactform from "./Contactform";
 
 // import { GlobalStyles, lightTheme, darkTheme } from "../theme";
 // import sketch from "../img/sketch.svg";
@@ -61,9 +62,10 @@ const HeaderDiv = styled.div`
     gap: 3rem;
 
     div {
+      padding: 1rem 0;
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 3rem;
 
       //first button in the div
       button:first-child {
@@ -73,7 +75,7 @@ const HeaderDiv = styled.div`
         padding: 1.5rem 2rem;
         border-radius: 3px;
         font-size: 1.6rem;
-        width: 200px;
+        width: 190px;
         cursor: pointer;
 
         @media (max-width: 768px) {
@@ -83,7 +85,7 @@ const HeaderDiv = styled.div`
         &:hover {
           background-color: #8fbdd9;
           color: #203f59;
-          transform: scale(1.1);
+          //transform: scale(1.1);
           transition: 0.5s;
           boder: none;
         }
@@ -96,7 +98,7 @@ const HeaderDiv = styled.div`
         padding: 1.5rem 2rem;
         border-radius: 3px;
         font-size: 1.6rem;
-        width: 200px;
+        width: 190px;
         cursor: pointer;
         @media (max-width: 768px) {
           width: 300px;
@@ -105,7 +107,7 @@ const HeaderDiv = styled.div`
           background-color: #8fbdd9;
           border: none;
           color: #fff;
-          transform: scale(1.1);
+          //transform: scale(1.1);
           transition: 0.5s;
         }
       }
@@ -174,8 +176,6 @@ const Header = () => {
             <button className="get-in-touch">Get in touch</button>
           </div>
         </div>
-
-        {/* <Sidemenu /> */}
       </HeaderDiv>
     </DivHeader>
   );
