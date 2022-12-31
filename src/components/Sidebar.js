@@ -58,12 +58,7 @@ const Sidebar = ({ sidebar, isDarkTheme, toggleTheme }) => {
       <ul className={sidebar ? "sidebar sidebar--open" : "sidebar"}>
         <li>Home</li>
         <li>
-          <Link
-            className="links"
-            to={{ pathname: "https://dev.to/requiemcreatif" }}
-            target="_blank">
-            Blog
-          </Link>
+          <a href="https://dev.to/requiemcreatif"> Blog</a>
         </li>
         <li>Contact</li>
         <div>

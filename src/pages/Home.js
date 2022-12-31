@@ -8,7 +8,7 @@ import BackDropMenu from "../components/BackDropMenu";
 
 import Header from "../components/Header";
 import Cards from "../components/Cards";
-import SliderComponent from "../components/SliderComponent";
+//import SliderComponent from "../components/SliderComponent";
 import Contactform from "../components/Contactform";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -44,7 +44,7 @@ const Home = ({ toggleShowLinks, isDarkTheme, toggleTheme, showLinks, renderActi
 
       <BackDropMenu sidebar={sidebar} closeSidebar={toggleSidebar} />
 
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {showComponentA ? (
           <motion.div
             initial={{ x: "-100%" }}
@@ -66,7 +66,9 @@ const Home = ({ toggleShowLinks, isDarkTheme, toggleTheme, showLinks, renderActi
             <Contactform />
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
+      <Cards />
+      {/* <Contactform /> */}
 
       <Footer />
     </div>

@@ -1,5 +1,7 @@
 {
   "name": "personal-web-v1",
+  "homepage": "https://requiemcreatif.com",
+  "description": "Alain Mani website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
