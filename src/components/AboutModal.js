@@ -27,15 +27,15 @@ const ModalDiv = styled.div`
 
   //z-index: 100;
   background-color: #fff;
-  max-width: 1200px;
+  width: 1000px;
   max-height: auto;
-  padding: 2rem;
+  padding: 3rem;
 
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 
   border-radius: 0.5rem;
   z-index: 100;
-  opacity: 0.9;
+  opacity: 1;
 
   animation: 0.6s ease-in-out 0s 1 normal none running fadeIn;
 
@@ -44,15 +44,15 @@ const ModalDiv = styled.div`
       opacity: 0;
     }
     100% {
-      opacity: 0.9;
+      opacity: 1;
     }
   }
 
   transition: width 0.3s ease-in-out;
 
   @media (max-width: 768px) {
-    padding: 1rem;
-    width: 300px;
+    padding: 2rem;
+    width: 350px;
   }
 
   button {

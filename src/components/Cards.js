@@ -115,7 +115,7 @@ const LeftDiv = styled.div`
   }
 `;
 
-const Cards = () => {
+const Cards = ({ setShowComponentA }) => {
   const [activeCard, setActiveCard] = useState(null);
   const [visible, setVisible] = useState(false);
 
@@ -136,48 +136,40 @@ const Cards = () => {
         <LeftDiv>
           {activeCard && activeCard === "front-end" ? (
             <div className={`text-animation ${visible ? "visible" : ""}`}>
-              <h3>Front End project</h3>
+              <h3>Front End projects</h3>
               <p>
                 User interfaces and visual designs of websites or web applications, using React,
                 JavaScript, HTML, and CSS.
               </p>
 
-              <div className="image-box">
-                <img src={react} alt="react" />
-              </div>
+              <div className="image-box">{/* <img src={react} alt="react" /> */}</div>
             </div>
           ) : activeCard === "back-end" ? (
             <div className={`text-animation ${visible ? "visible" : ""}`}>
-              <h3>Back End project</h3>
+              <h3>Back End projects</h3>
               <p>
                 Node.js and Express to create server-side scripts and integrate with databases using
                 MongoDB or Firebase.
               </p>
-              <div className="image-box">
-                <img src={react} alt="react" />
-              </div>
+              <div className="image-box">{/* <img src={react} alt="react" /> */}</div>
             </div>
           ) : activeCard === "full-stack" ? (
             <div className={`text-animation ${visible ? "visible" : ""}`}>
-              <h3>Full Stack project</h3>
+              <h3>Full Stack projects</h3>
               <p>
-                User interface and server-side development, using React, Node.js, Express, MongoDB,
+                User interfaces and server-side development, using React, Node.js, Express, MongoDB,
                 and Firebase.
               </p>
-              <div className="image-box">
-                <img src={react} alt="react" />
-              </div>
+              <div className="image-box">{/* <img src={react} alt="react" /> */}</div>
             </div>
           ) : activeCard === "graphic-design" ? (
             <div className={`text-animation ${visible ? "visible" : ""}`}>
-              <h3>Graphic design project</h3>
+              <h3>Graphic design projects</h3>
               <p>
                 Creation of visual appealing designs for websites, web applications, and mobile
                 applications.
               </p>
-              <div className="image-box">
-                <img src={react} alt="react" />
-              </div>
+              <div className="image-box">{/* <img src={react} alt="react" /> */}</div>
             </div>
           ) : null}
         </LeftDiv>

@@ -68,7 +68,8 @@ const HeaderDiv = styled.div`
       gap: 3rem;
 
       //first button in the div
-      button:first-child {
+      button {
+        //button:first-child {
         //background-color: #193147;
         color: #fff;
         border: none;
@@ -91,7 +92,7 @@ const HeaderDiv = styled.div`
         }
       }
 
-      button:last-child {
+      /* button:last-child {
         background-color: transparent;
         //color: #fff;
         //border: 1px solid #193147;
@@ -115,7 +116,7 @@ const HeaderDiv = styled.div`
       @media (max-width: 768px) {
         flex-direction: column;
         align-items: center;
-      }
+      } */
     }
 
     h3 {
@@ -144,7 +145,7 @@ const HeaderDiv = styled.div`
   }
 `;
 
-const Header = () => {
+const Header = ({ setShowComponentA, showComponentA }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const removeModal = () => setModalIsOpen(true, console.log("show"));
   const handleClose = () => setModalIsOpen(false, console.log("closed"));
@@ -171,10 +172,15 @@ const Header = () => {
           </p> */}
           <div>
             <button className="about-me-btn" onClick={removeModal}>
-              More About Me
+              About Me
             </button>
-            <button className="get-in-touch">Get in touch</button>
+            {/* <button className="get-in-touch" onClick={() => setShowComponentA(!showComponentA)}>
+              Get in touch
+            </button> */}
           </div>
+          {/* <button className="get-in-touch" onClick={() => setShowComponentA(!showComponentA)}>
+            Get in touch
+          </button> */}
         </div>
       </HeaderDiv>
     </DivHeader>
