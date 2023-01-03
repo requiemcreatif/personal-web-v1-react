@@ -6,6 +6,8 @@ This is my personal website build with React and Syled Component.
 
 - React = Library
 - Styled Components = CSS
-- Firebase = Database
+- Node.js
+- Express
+- MongoDB
 
 # personal-web-v1-react

@@ -68,7 +68,7 @@ const Home = ({ toggleShowLinks, isDarkTheme, toggleTheme, showLinks, renderActi
         )}
       </AnimatePresence> */}
       <Cards />
-      {/* <Contactform /> */}
+      <Contactform />
 
       <Footer />
     </div>
